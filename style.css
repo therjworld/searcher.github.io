@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #333;
+}
+
+.hero {
+  background: linear-gradient(to right, #1d2671, #c33764);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: white;
+  color: #c33764;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+section {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.skills li {
+  display: inline-block;
+  margin: 10px;
+  background: #ddd;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.projects .project {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.contact {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: white;
+}
