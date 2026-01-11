@@ -8,7 +8,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- Skill Icons CDN (NO manual images) -->
+  <!-- Skill Icons CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
 <style>
@@ -83,10 +83,7 @@ nav a{
   display:grid;
   grid-template-columns:90px 1fr;
   gap:40px;
-  align-items:flex-start;
 }
-
-/* --- CSS BARS --- */
 .bars{
   display:flex;
   gap:10px;
@@ -103,21 +100,13 @@ nav a{
 .bars span:nth-child(2){background:#c46b2d;animation-delay:.2s}
 .bars span:nth-child(3){background:#222;animation-delay:.3s}
 .bars span:nth-child(4){background:#a33a4f;animation-delay:.4s}
-
-@keyframes barReveal{
-  to{opacity:1;transform:translateY(0)}
-}
-
-.hero:hover .bars span{
-  box-shadow:0 0 14px rgba(106,163,139,.6);
-}
-
+@keyframes barReveal{to{opacity:1;transform:translateY(0)}}
+.hero:hover .bars span{box-shadow:0 0 16px rgba(106,163,139,.5)}
 body.dark .bars span:nth-child(1){background:#7ddbb5}
 body.dark .bars span:nth-child(2){background:#f0a35e}
 body.dark .bars span:nth-child(3){background:#eaeaf0}
 body.dark .bars span:nth-child(4){background:#e07a7a}
 
-/* --- HERO TEXT --- */
 .hero h1{
   font-family:"Playfair Display",serif;
   font-size:64px;
@@ -136,8 +125,6 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
   margin:20px 0 36px;
   color:var(--muted);
 }
-
-/* --- BUTTONS --- */
 .hero-buttons{
   display:flex;
   gap:16px;
@@ -149,16 +136,10 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
   text-decoration:none;
   transition:.3s;
 }
-.primary{
-  background:var(--accent);
-  color:#fff;
-}
-.outline{
-  border:1px solid var(--border);
-  color:var(--text);
-}
+.primary{background:var(--accent);color:#fff}
+.outline{border:1px solid var(--border);color:var(--text)}
 .btn:hover{
-  box-shadow:0 0 20px rgba(106,163,139,.5);
+  box-shadow:0 0 22px rgba(106,163,139,.5);
   transform:translateY(-2px);
 }
 
@@ -174,15 +155,21 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
   animation:marquee 28s linear infinite;
 }
 .marquee span{
+  display:flex;
+  align-items:center;
+  gap:8px;
   padding:10px 14px;
   background:var(--card);
   border:1px solid var(--border);
   border-radius:6px;
   white-space:nowrap;
+  font-size:14px;
 }
-@keyframes marquee{
-  to{transform:translateX(-50%)}
+.marquee i{font-size:18px}
+.marquee span:hover i{
+  filter:drop-shadow(0 0 8px rgba(106,163,139,.6));
 }
+@keyframes marquee{to{transform:translateX(-50%)}}
 
 .skills-cards{
   display:grid;
@@ -201,9 +188,7 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
   gap:14px;
   margin-bottom:12px;
 }
-.skill-head i{
-  font-size:34px;
-}
+.skill-head i{font-size:34px}
 
 /* ================= EXPERIENCE ================= */
 .timeline{position:relative}
@@ -217,13 +202,13 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
   background:var(--border);
 }
 .exp{
-  position:relative;
   margin-left:40px;
   margin-bottom:40px;
   background:var(--card);
   border:1px solid var(--border);
   padding:30px;
   border-radius:6px;
+  position:relative;
 }
 .exp::before{
   content:"";
@@ -259,26 +244,14 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
 .red{border-color:#c95c5c}
 
 /* ================= REVEAL ================= */
-.reveal{
-  opacity:0;
-  transform:translateY(20px);
-  transition:.8s ease;
-}
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
-}
+.reveal{opacity:0;transform:translateY(20px);transition:.8s}
+.reveal.active{opacity:1;transform:translateY(0)}
 
 /* ================= MOBILE ================= */
 @media(max-width:768px){
   nav{padding:20px}
-  .hero-wrap{
-    grid-template-columns:60px 1fr;
-  }
-  .bars span{
-    height:140px;
-    width:8px;
-  }
+  .hero-wrap{grid-template-columns:60px 1fr}
+  .bars span{height:140px;width:8px}
   .hero h1{font-size:42px}
 }
 </style>
@@ -297,7 +270,6 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
   <div class="toggle" id="themeToggle">Dark</div>
 </nav>
 
-<!-- HERO -->
 <section class="section hero">
   <div class="hero-wrap">
     <div class="bars">
@@ -310,10 +282,7 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
         <span class="accent">DATA-DRIVEN INSIGHTS</span><br>
         FOR REAL-WORLD IMPACT.
       </h1>
-      <p>
-        Experienced Data Analyst with 9+ years of experience delivering
-        insights using Power BI, Python, SQL, and analytics.
-      </p>
+      <p>Experienced Data Analyst with 9+ years using Power BI, Python & SQL.</p>
       <div class="hero-buttons">
         <a href="#projects" class="btn primary">LET’S GET STARTED →</a>
         <a href="Searcher_Data_Analyst_Resume.pdf" class="btn outline" download>
@@ -324,15 +293,23 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills" class="section">
   <h2>Skills.</h2>
 
   <div class="skills-marquee">
     <div class="marquee">
-      <span>Python</span><span>SQL</span><span>Power BI</span><span>DAX</span>
-      <span>Excel</span><span>ETL</span><span>Machine Learning</span><span>Statistics</span>
-      <span>Python</span><span>SQL</span><span>Power BI</span><span>DAX</span>
+      <span><i class="devicon-python-plain colored"></i>Python</span>
+      <span><i class="devicon-mysql-plain colored"></i>SQL</span>
+      <span><i class="devicon-powerbi-plain colored"></i>Power BI</span>
+      <span><i class="devicon-d3js-plain colored"></i>DAX</span>
+      <span><i class="devicon-excel-plain colored"></i>Excel</span>
+      <span><i class="devicon-apache-plain colored"></i>ETL</span>
+      <span><i class="devicon-tensorflow-original colored"></i>Machine Learning</span>
+      <span><i class="devicon-mathworks-plain colored"></i>Statistics</span>
+
+      <span><i class="devicon-python-plain colored"></i>Python</span>
+      <span><i class="devicon-mysql-plain colored"></i>SQL</span>
+      <span><i class="devicon-powerbi-plain colored"></i>Power BI</span>
     </div>
   </div>
 
@@ -343,21 +320,18 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
       </div>
       <p>Pandas, NumPy, automation</p>
     </div>
-
     <div class="skill-card reveal">
       <div class="skill-head">
         <i class="devicon-mysql-plain colored"></i><h3>SQL</h3>
       </div>
-      <p>MySQL, joins, optimization</p>
+      <p>Joins, optimization</p>
     </div>
-
     <div class="skill-card reveal">
       <div class="skill-head">
         <i class="devicon-powerbi-plain colored"></i><h3>Power BI</h3>
       </div>
-      <p>Dashboards, DAX</p>
+      <p>DAX, dashboards</p>
     </div>
-
     <div class="skill-card reveal">
       <div class="skill-head">
         <i class="devicon-excel-plain colored"></i><h3>Excel</h3>
@@ -367,29 +341,15 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience" class="section">
   <h2>Experience.</h2>
   <div class="timeline">
-    <div class="exp reveal">
-      <span class="date">2023 – Present</span>
-      <h3>Deputy Manager – Data Analytics</h3>
-      <small>Reliance Industries Limited</small>
-    </div>
-    <div class="exp reveal">
-      <span class="date">2020 – 2021</span>
-      <h3>Cluster In-Charge</h3>
-      <small>Bharti Infratel / Indus Towers</small>
-    </div>
-    <div class="exp reveal">
-      <span class="date">2019 – 2020</span>
-      <h3>Cluster Engineer</h3>
-      <small>ATC Telecom</small>
-    </div>
+    <div class="exp reveal"><span class="date">2023–Present</span><h3>Deputy Manager</h3><small>Reliance Industries</small></div>
+    <div class="exp reveal"><span class="date">2020–2021</span><h3>Cluster In-Charge</h3><small>Indus Towers</small></div>
+    <div class="exp reveal"><span class="date">2019–2020</span><h3>Cluster Engineer</h3><small>ATC Telecom</small></div>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects" class="section">
   <h2>Projects.</h2>
   <div class="projects">
@@ -399,7 +359,6 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="section">
   <h2>Contact.</h2>
   <p>📧 therjworld@gmail.com</p>
@@ -407,14 +366,12 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
 </section>
 
 <script>
-/* Scroll reveal */
 const els=document.querySelectorAll(".reveal");
 const io=new IntersectionObserver(e=>{
   e.forEach(x=>x.isIntersecting&&x.target.classList.add("active"));
 },{threshold:.2});
 els.forEach(el=>io.observe(el));
 
-/* Dark mode */
 const t=document.getElementById("themeToggle");
 if(localStorage.theme==="dark"){
   document.body.classList.add("dark");
