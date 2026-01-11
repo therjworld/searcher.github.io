@@ -428,11 +428,11 @@ body.dark .glow-btn:hover{
 }
 
 .bars-css span{
-  width:10px;
-  height:200px;
-  border-radius:3px;
+  width:200px;
+  height:6000px;
+  border-radius:6px;
   opacity:0;
-  transform:translateY(20px);
+  transform:translateY(30px);
   animation:barReveal 1s ease forwards;
 }
 
