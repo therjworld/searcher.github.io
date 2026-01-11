@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-<meta charset="UTF-8">
-<title>Searcher | Data Analyst</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Searcher | Data Analyst</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Skill Icons CDN (NO manual images) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
 <style>
 /* ================= ROOT ================= */
@@ -62,19 +64,7 @@ nav ul{
 nav a{
   text-decoration:none;
   color:var(--muted);
-  position:relative;
 }
-nav a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  width:0;
-  height:1px;
-  background:var(--accent);
-  transition:.3s;
-}
-nav a:hover::after{width:100%}
 .toggle{
   cursor:pointer;
   font-size:13px;
@@ -91,7 +81,7 @@ nav a:hover::after{width:100%}
 }
 .hero-wrap{
   display:grid;
-  grid-template-columns:60px 1fr;
+  grid-template-columns:90px 1fr;
   gap:40px;
   align-items:flex-start;
 }
@@ -99,11 +89,11 @@ nav a:hover::after{width:100%}
 /* --- CSS BARS --- */
 .bars{
   display:flex;
-  gap:6px;
+  gap:10px;
 }
 .bars span{
   width:10px;
-  height:300px;
+  height:220px;
   border-radius:5px;
   opacity:0;
   transform:translateY(20px);
@@ -118,18 +108,14 @@ nav a:hover::after{width:100%}
   to{opacity:1;transform:translateY(0)}
 }
 
-/* Dark mode bars */
+.hero:hover .bars span{
+  box-shadow:0 0 14px rgba(106,163,139,.6);
+}
+
 body.dark .bars span:nth-child(1){background:#7ddbb5}
 body.dark .bars span:nth-child(2){background:#f0a35e}
 body.dark .bars span:nth-child(3){background:#eaeaf0}
 body.dark .bars span:nth-child(4){background:#e07a7a}
-
-/* Glow on hover */
-.hero:hover .bars span{
-  box-shadow:
-    0 0 10px rgba(106,163,139,.5),
-    0 0 24px rgba(106,163,139,.3);
-}
 
 /* --- HERO TEXT --- */
 .hero h1{
@@ -137,31 +123,28 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
   font-size:64px;
   line-height:1.05;
 }
-.hero .accent{color:var(--accent)}
+.accent{color:var(--accent)}
 .eyebrow{
   font-size:12px;
   letter-spacing:2px;
   text-transform:uppercase;
-  margin-bottom:14px;
   color:var(--muted);
+  margin-bottom:14px;
 }
 .hero p{
   max-width:620px;
   margin:20px 0 36px;
   color:var(--muted);
-  line-height:1.6;
 }
 
 /* --- BUTTONS --- */
 .hero-buttons{
   display:flex;
   gap:16px;
-  flex-wrap:wrap;
 }
 .btn{
   padding:14px 26px;
   font-size:13px;
-  letter-spacing:1px;
   border-radius:6px;
   text-decoration:none;
   transition:.3s;
@@ -175,76 +158,52 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
   color:var(--text);
 }
 .btn:hover{
-  box-shadow:
-    0 0 12px rgba(106,163,139,.5),
-    0 0 30px rgba(106,163,139,.35);
+  box-shadow:0 0 20px rgba(106,163,139,.5);
   transform:translateY(-2px);
 }
 
 /* ================= SKILLS ================= */
-<section id="skills" class="section">
-  <h2>Skills.</h2>
+.skills-marquee{
+  overflow:hidden;
+  margin-bottom:60px;
+}
+.marquee{
+  display:flex;
+  gap:14px;
+  width:max-content;
+  animation:marquee 28s linear infinite;
+}
+.marquee span{
+  padding:10px 14px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:6px;
+  white-space:nowrap;
+}
+@keyframes marquee{
+  to{transform:translateX(-50%)}
+}
 
-  <div class="skills-marquee">
-    <div class="marquee">
-      <span>Python</span>
-      <span>SQL</span>
-      <span>Power BI</span>
-      <span>DAX</span>
-      <span>Excel</span>
-      <span>ETL</span>
-      <span>Machine Learning</span>
-      <span>Statistics</span>
-
-      <!-- duplicate for smooth loop -->
-      <span>Python</span>
-      <span>SQL</span>
-      <span>Power BI</span>
-      <span>DAX</span>
-      <span>Excel</span>
-      <span>ETL</span>
-      <span>Machine Learning</span>
-      <span>Statistics</span>
-    </div>
-  </div>
-</section>
-<div class="skills-cards">
-
-  <div class="skill-card reveal">
-    <div class="skill-head">
-      <i class="devicon-python-plain colored"></i>
-      <h3>Python</h3>
-    </div>
-    <p>Pandas, NumPy, automation, ML basics</p>
-  </div>
-
-  <div class="skill-card reveal">
-    <div class="skill-head">
-      <i class="devicon-mysql-plain colored"></i>
-      <h3>SQL</h3>
-    </div>
-    <p>MySQL, joins, performance tuning</p>
-  </div>
-
-  <div class="skill-card reveal">
-    <div class="skill-head">
-      <i class="devicon-powerbi-plain colored"></i>
-      <h3>Power BI</h3>
-    </div>
-    <p>Dashboards, DAX, insights</p>
-  </div>
-
-  <div class="skill-card reveal">
-    <div class="skill-head">
-      <i class="devicon-excel-plain colored"></i>
-      <h3>Excel</h3>
-    </div>
-    <p>Power Query, pivot tables</p>
-  </div>
-
-</div>
-
-
+.skills-cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:40px;
+}
+.skill-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:30px;
+  border-radius:6px;
+}
+.skill-head{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:12px;
+}
+.skill-head i{
+  font-size:34px;
+}
 
 /* ================= EXPERIENCE ================= */
 .timeline{position:relative}
@@ -281,7 +240,6 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
   border:1px solid var(--border);
   padding:4px 8px;
   border-radius:4px;
-  color:var(--muted);
 }
 
 /* ================= PROJECTS ================= */
@@ -315,12 +273,11 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
 @media(max-width:768px){
   nav{padding:20px}
   .hero-wrap{
-    grid-template-columns:40px 1fr;
-    gap:20px;
+    grid-template-columns:60px 1fr;
   }
   .bars span{
-    height:400px;
-    width:20px;
+    height:140px;
+    width:8px;
   }
   .hero h1{font-size:42px}
 }
@@ -343,11 +300,9 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
 <!-- HERO -->
 <section class="section hero">
   <div class="hero-wrap">
-
     <div class="bars">
       <span></span><span></span><span></span><span></span>
     </div>
-
     <div>
       <p class="eyebrow">SEARCHER • DATA ANALYST</p>
       <h1>
@@ -357,9 +312,8 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
       </h1>
       <p>
         Experienced Data Analyst with 9+ years of experience delivering
-        business insights using Power BI, Python, SQL, and analytics.
+        insights using Power BI, Python, SQL, and analytics.
       </p>
-
       <div class="hero-buttons">
         <a href="#projects" class="btn primary">LET’S GET STARTED →</a>
         <a href="Searcher_Data_Analyst_Resume.pdf" class="btn outline" download>
@@ -367,7 +321,6 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
         </a>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -378,8 +331,38 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
   <div class="skills-marquee">
     <div class="marquee">
       <span>Python</span><span>SQL</span><span>Power BI</span><span>DAX</span>
-      <span>Excel</span><span>ETL</span><span>ML</span><span>Statistics</span>
+      <span>Excel</span><span>ETL</span><span>Machine Learning</span><span>Statistics</span>
       <span>Python</span><span>SQL</span><span>Power BI</span><span>DAX</span>
+    </div>
+  </div>
+
+  <div class="skills-cards">
+    <div class="skill-card reveal">
+      <div class="skill-head">
+        <i class="devicon-python-plain colored"></i><h3>Python</h3>
+      </div>
+      <p>Pandas, NumPy, automation</p>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-head">
+        <i class="devicon-mysql-plain colored"></i><h3>SQL</h3>
+      </div>
+      <p>MySQL, joins, optimization</p>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-head">
+        <i class="devicon-powerbi-plain colored"></i><h3>Power BI</h3>
+      </div>
+      <p>Dashboards, DAX</p>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-head">
+        <i class="devicon-excel-plain colored"></i><h3>Excel</h3>
+      </div>
+      <p>Power Query, pivots</p>
     </div>
   </div>
 </section>
@@ -387,20 +370,17 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
 <!-- EXPERIENCE -->
 <section id="experience" class="section">
   <h2>Experience.</h2>
-
   <div class="timeline">
     <div class="exp reveal">
       <span class="date">2023 – Present</span>
       <h3>Deputy Manager – Data Analytics</h3>
       <small>Reliance Industries Limited</small>
     </div>
-
     <div class="exp reveal">
       <span class="date">2020 – 2021</span>
       <h3>Cluster In-Charge</h3>
       <small>Bharti Infratel / Indus Towers</small>
     </div>
-
     <div class="exp reveal">
       <span class="date">2019 – 2020</span>
       <h3>Cluster Engineer</h3>
@@ -415,7 +395,7 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
   <div class="projects">
     <div class="project green">Sales Dashboard (Power BI)</div>
     <div class="project orange">Customer Segmentation (Python)</div>
-    <div class="project red">Data Automation (ETL)</div>
+    <div class="project red">ETL Automation</div>
   </div>
 </section>
 
@@ -427,7 +407,7 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
 </section>
 
 <script>
-/* Reveal */
+/* Scroll reveal */
 const els=document.querySelectorAll(".reveal");
 const io=new IntersectionObserver(e=>{
   e.forEach(x=>x.isIntersecting&&x.target.classList.add("active"));
