@@ -478,8 +478,8 @@ body.dark .bars-css span:nth-child(4){background:#e07a7a}
 /* mobile */
 @media(max-width:768px){
   .bars-css span{
-    height:100px;
-    width:5px;
+    height:200px;
+    width:8px;
   }
 }
 
