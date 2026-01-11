@@ -44,3 +44,10 @@ if (themeToggle) {
     }
   });
 }
+/* ================= HERO BAR LOAD ANIMATION ================= */
+window.addEventListener("load", () => {
+  const heroImage = document.querySelector(".hero-image");
+  if (heroImage) {
+    heroImage.classList.add("animate");
+  }
+});
