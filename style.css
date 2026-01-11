@@ -482,4 +482,22 @@ body.dark .bars-css span:nth-child(4){background:#e07a7a}
     width:8px;
   }
 }
+/* ================= SKILL ICONS (CDN) ================= */
+
+.skill-head{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:14px;
+}
+
+.skill-head i{
+  font-size:34px;
+  transition:.3s;
+}
+
+/* Glow on hover (matches your theme) */
+.skill-head i:hover{
+  filter:drop-shadow(0 0 10px rgba(106,163,139,.6));
+}
 
