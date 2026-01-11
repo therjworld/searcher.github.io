@@ -418,3 +418,68 @@ body.dark .glow-btn:hover{
   opacity:1 !important;
   visibility:visible !important;
 }
+
+/* ================= CSS HERO BARS (FINAL FIX) ================= */
+
+.bars-css{
+  display:flex;
+  gap:6px;
+  align-items:flex-start;
+}
+
+.bars-css span{
+  width:6px;
+  height:140px;
+  border-radius:3px;
+  opacity:0;
+  transform:translateY(20px);
+  animation:barReveal 1s ease forwards;
+}
+
+/* individual colors */
+.bars-css span:nth-child(1){
+  background:#6aa38b;
+  animation-delay:.1s;
+}
+.bars-css span:nth-child(2){
+  background:#c46b2d;
+  animation-delay:.2s;
+}
+.bars-css span:nth-child(3){
+  background:#222;
+  animation-delay:.3s;
+}
+.bars-css span:nth-child(4){
+  background:#a33a4f;
+  animation-delay:.4s;
+}
+
+/* reveal animation */
+@keyframes barReveal{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* glow on hover */
+.hero:hover .bars-css span{
+  box-shadow:
+    0 0 10px rgba(106,163,139,.5),
+    0 0 24px rgba(106,163,139,.3);
+}
+
+/* dark mode bars */
+body.dark .bars-css span:nth-child(1){background:#7ddbb5}
+body.dark .bars-css span:nth-child(2){background:#f0a35e}
+body.dark .bars-css span:nth-child(3){background:#eaeaf0}
+body.dark .bars-css span:nth-child(4){background:#e07a7a}
+
+/* mobile */
+@media(max-width:768px){
+  .bars-css span{
+    height:100px;
+    width:5px;
+  }
+}
+
