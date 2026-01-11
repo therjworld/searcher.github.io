@@ -374,3 +374,17 @@ body.dark .glow-btn:hover{
     font-size:42px;
   }
 }
+/* ================= BARS ANIMATION ================= */
+
+/* Initial state */
+.hero-image img {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Active state (on load) */
+.hero-image.animate img {
+  opacity: 1;
+  transform: translateY(0);
+}
