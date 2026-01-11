@@ -296,8 +296,7 @@ body::before {
 .mask-text .line span {
   display: inline-block;
   transform: translateY(110%);
-  animation: revealText 1.2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
-}
+ }
 
 /* Accent line color */
 .mask-text .accent span {
@@ -312,6 +311,30 @@ body::before {
 
 @keyframes revealText {
   to {
+    transform: translateY(0%);
+  }
+}
+/* ================================
+   HOVER + SCROLL MASK INTERACTION
+================================ */
+
+/* Play state */
+.mask-text.play .line span {
+  animation: revealText 1.2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+}
+
+/* Hover micro-lift */
+.mask-text .line span {
+  transition: transform 0.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.mask-text:hover .line span {
+  transform: translateY(-4%);
+}
+
+/* Prevent mobile hover weirdness */
+@media (max-width: 768px) {
+  .mask-text:hover .line span {
     transform: translateY(0%);
   }
 }
