@@ -1,19 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Searcher | Data Analyst</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<title>Searcher | Data Analyst</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+<style>
+:root {
+  --bg:#f7f4ed;
+  --text:#1e1e1e;
+  --accent:#6aa38b;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:24px 60px;
+}
+nav ul{display:flex;gap:30px;list-style:none}
+nav a{text-decoration:none;color:#555}
+
+/* SECTION */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:100px 20px;
+}
+h2{
+  font-family:"Playfair Display",serif;
+  font-size:42px;
+  margin-bottom:40px;
+}
+
+/* HERO */
+.hero{
+  min-height:80vh;
+  display:flex;
+  align-items:center;
+}
+.hero h1{
+  font-family:"Playfair Display",serif;
+  font-size:64px;
+  line-height:1.05;
+}
+.hero span{color:var(--accent)}
+.hero p{
+  margin-top:20px;
+  max-width:600px;
+  color:#555;
+}
+
+/* SKILLS MARQUEE */
+.skills-marquee{overflow:hidden;margin:40px 0 60px}
+.marquee-track{
+  display:flex;
+  gap:14px;
+  width:max-content;
+  animation:marquee 28s linear infinite;
+}
+.skills-marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{
+  padding:10px 14px;
+  background:rgba(255,255,255,.7);
+  border:1px solid rgba(0,0,0,.1);
+  border-radius:6px;
+  font-size:14px;
+}
+@keyframes marquee{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* SKILL CARDS */
+.skills-cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:40px;
+}
+.skill-card{
+  background:rgba(255,255,255,.8);
+  border:1px solid rgba(0,0,0,.08);
+  padding:35px;
+  border-radius:6px;
+  box-shadow:0 10px 20px rgba(0,0,0,.04);
+}
+.skill-card h3{
+  font-family:"Playfair Display",serif;
+  margin-bottom:20px;
+}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tags span{
+  font-size:13px;
+  padding:6px 10px;
+  background:#efece4;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:4px;
+}
+
+/* REVEAL */
+.reveal{
+  opacity:0;
+  transform:translateY(20px);
+  transition:.8s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* CONTACT */
+.contact p{margin-bottom:10px}
+</style>
 </head>
+
 <body>
 
-<nav class="nav">
-  <div class="logo">SR.</div>
+<nav>
+  <strong>SR.</strong>
   <ul>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -21,65 +136,59 @@
   </ul>
 </nav>
 
+<!-- HERO -->
+<section class="section hero">
+  <div>
+    <h1>
+      BUILDING<br>
+      <span>DATA-DRIVEN INSIGHTS</span><br>
+      FOR REAL-WORLD<br>
+      IMPACT.
+    </h1>
+    <p>
+      Searcher — Experienced Data Analyst with 9+ years of experience
+      delivering business insights using Power BI, Python, SQL and
+      advanced analytics.
+    </p>
+  </div>
+</section>
+
 <!-- SKILLS -->
-<section id="skills" class="section skills-editorial">
+<section id="skills" class="section">
   <h2>Skills.</h2>
 
-  <!-- MOVING ICON ROW -->
   <div class="skills-marquee">
     <div class="marquee-track">
-      <span>AI</span>
-      <span>Python</span>
-      <span>Power BI</span>
-      <span>SQL</span>
-      <span>DAX</span>
-      <span>Excel</span>
-      <span>ETL</span>
-      <span>Machine Learning</span>
+      <span>Python</span><span>SQL</span><span>Power BI</span><span>DAX</span>
+      <span>Excel</span><span>ETL</span><span>ML</span><span>Statistics</span>
 
-      <!-- duplicate -->
-      <span>AI</span>
-      <span>Python</span>
-      <span>Power BI</span>
-      <span>SQL</span>
-      <span>DAX</span>
-      <span>Excel</span>
-      <span>ETL</span>
-      <span>Machine Learning</span>
+      <span>Python</span><span>SQL</span><span>Power BI</span><span>DAX</span>
+      <span>Excel</span><span>ETL</span><span>ML</span><span>Statistics</span>
     </div>
   </div>
 
-  <!-- SKILL BOXES -->
   <div class="skills-cards">
-
     <div class="skill-card reveal">
       <h3>Technical Expertise</h3>
       <div class="tags">
-        <span>Python</span>
-        <span>SQL</span>
-        <span>Power BI</span>
-        <span>DAX</span>
-        <span>DataStage</span>
-        <span>ETL</span>
+        <span>Python</span><span>SQL</span><span>Power BI</span>
+        <span>DAX</span><span>DataStage</span>
       </div>
     </div>
 
     <div class="skill-card reveal">
       <h3>Analytics & Modeling</h3>
       <div class="tags">
-        <span>EDA</span>
-        <span>Predictive Modeling</span>
+        <span>EDA</span><span>Predictive Modeling</span>
         <span>Machine Learning</span>
-        <span>Statistics</span>
       </div>
     </div>
 
     <div class="skill-card reveal">
-      <h3>Solution Design</h3>
+      <h3>Business Intelligence</h3>
       <div class="tags">
-        <span>Dashboards</span>
-        <span>Enterprise Reporting</span>
-        <span>Data Pipelines</span>
+        <span>Dashboards</span><span>KPI Reporting</span>
+        <span>Data Visualization</span>
       </div>
     </div>
 
@@ -91,22 +200,32 @@
         <span>Communication</span>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- PROJECTS PLACEHOLDER -->
+<!-- PROJECTS -->
 <section id="projects" class="section">
   <h2>Projects.</h2>
-  <p>Coming soon…</p>
+  <p>Power BI Dashboards • Customer Segmentation • Data Automation</p>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section contact">
   <h2>Contact.</h2>
   <p>📧 therjworld@gmail.com</p>
+  <p>📞 +91-7987111121</p>
+  <p>GitHub: https://github.com/therjworld</p>
 </section>
 
-<script src="script.js"></script>
+<script>
+const reveals=document.querySelectorAll(".reveal");
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add("active")}
+  });
+},{threshold:.2});
+reveals.forEach(r=>obs.observe(r));
+</script>
+
 </body>
 </html>
