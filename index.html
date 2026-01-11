@@ -9,30 +9,32 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-:root {
+/* ================= ROOT ================= */
+:root{
   --bg:#f7f4ed;
+  --card:#ffffffcc;
   --text:#1e1e1e;
+  --muted:#666;
   --accent:#6aa38b;
+  --border:#ddd;
+}
+body.dark{
+  --bg:#0f1115;
+  --card:#181b22;
+  --text:#eaeaf0;
+  --muted:#aaa;
+  --border:#2a2f3a;
 }
 
+/* ================= GLOBAL ================= */
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   font-family:Inter,sans-serif;
   background:var(--bg);
   color:var(--text);
+  transition:.3s;
 }
-
-/* NAV */
-nav{
-  display:flex;
-  justify-content:space-between;
-  padding:24px 60px;
-}
-nav ul{display:flex;gap:30px;list-style:none}
-nav a{text-decoration:none;color:#555}
-
-/* SECTION */
 .section{
   max-width:1100px;
   margin:auto;
@@ -41,10 +43,26 @@ nav a{text-decoration:none;color:#555}
 h2{
   font-family:"Playfair Display",serif;
   font-size:42px;
-  margin-bottom:40px;
+  margin-bottom:50px;
 }
 
-/* HERO */
+/* ================= NAV ================= */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:24px 60px;
+}
+nav ul{display:flex;gap:30px;list-style:none}
+nav a{text-decoration:none;color:var(--muted)}
+.toggle{
+  cursor:pointer;
+  font-size:14px;
+  border:1px solid var(--border);
+  padding:6px 12px;
+  border-radius:20px;
+}
+
+/* ================= HERO ================= */
 .hero{
   min-height:80vh;
   display:flex;
@@ -58,23 +76,21 @@ h2{
 .hero span{color:var(--accent)}
 .hero p{
   margin-top:20px;
-  max-width:600px;
-  color:#555;
+  max-width:620px;
+  color:var(--muted);
 }
 
-/* SKILLS MARQUEE */
+/* ================= SKILLS ================= */
 .skills-marquee{overflow:hidden;margin:40px 0 60px}
 .marquee-track{
-  display:flex;
-  gap:14px;
-  width:max-content;
+  display:flex;gap:14px;width:max-content;
   animation:marquee 28s linear infinite;
 }
 .skills-marquee:hover .marquee-track{animation-play-state:paused}
 .marquee-track span{
   padding:10px 14px;
-  background:rgba(255,255,255,.7);
-  border:1px solid rgba(0,0,0,.1);
+  background:var(--card);
+  border:1px solid var(--border);
   border-radius:6px;
   font-size:14px;
 }
@@ -82,34 +98,81 @@ h2{
   from{transform:translateX(0)}
   to{transform:translateX(-50%)}
 }
-
-/* SKILL CARDS */
 .skills-cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
   gap:40px;
 }
 .skill-card{
-  background:rgba(255,255,255,.8);
-  border:1px solid rgba(0,0,0,.08);
+  background:var(--card);
+  border:1px solid var(--border);
   padding:35px;
   border-radius:6px;
-  box-shadow:0 10px 20px rgba(0,0,0,.04);
 }
-.skill-card h3{
-  font-family:"Playfair Display",serif;
-  margin-bottom:20px;
+
+/* ================= EXPERIENCE (LIKE SCREENSHOT) ================= */
+.timeline{
+  position:relative;
 }
-.tags{display:flex;flex-wrap:wrap;gap:10px}
-.tags span{
-  font-size:13px;
-  padding:6px 10px;
-  background:#efece4;
-  border:1px solid rgba(0,0,0,.08);
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:10px;
+  top:0;
+  bottom:0;
+  width:2px;
+  background:var(--border);
+}
+.exp{
+  position:relative;
+  margin-left:40px;
+  margin-bottom:40px;
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:30px;
+  border-radius:6px;
+}
+.exp::before{
+  content:"";
+  position:absolute;
+  left:-34px;
+  top:28px;
+  width:10px;height:10px;
+  background:var(--accent);
+  border-radius:50%;
+}
+.exp h3{margin-bottom:6px}
+.exp small{color:var(--muted)}
+.date{
+  float:right;
+  font-size:12px;
+  padding:4px 8px;
+  border:1px solid var(--border);
   border-radius:4px;
 }
 
-/* REVEAL */
+/* ================= PROJECTS ================= */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:40px;
+}
+.project{
+  background:var(--card);
+  border:2px solid;
+  padding:30px;
+  border-radius:6px;
+}
+.green{border-color:#6aa38b}
+.orange{border-color:#e38b3b}
+.red{border-color:#c95c5c}
+.project h3{margin-bottom:10px}
+.project p{color:var(--muted)}
+
+/* ================= CONTACT ================= */
+.contact p{margin-bottom:10px}
+
+/* ================= REVEAL ================= */
 .reveal{
   opacity:0;
   transform:translateY(20px);
@@ -119,9 +182,6 @@ h2{
   opacity:1;
   transform:translateY(0);
 }
-
-/* CONTACT */
-.contact p{margin-bottom:10px}
 </style>
 </head>
 
@@ -131,9 +191,11 @@ h2{
   <strong>SR.</strong>
   <ul>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <div class="toggle" id="themeToggle">Dark</div>
 </nav>
 
 <!-- HERO -->
@@ -142,13 +204,11 @@ h2{
     <h1>
       BUILDING<br>
       <span>DATA-DRIVEN INSIGHTS</span><br>
-      FOR REAL-WORLD<br>
-      IMPACT.
+      FOR REAL-WORLD IMPACT.
     </h1>
     <p>
       Searcher — Experienced Data Analyst with 9+ years of experience
-      delivering business insights using Power BI, Python, SQL and
-      advanced analytics.
+      delivering business insights using Power BI, Python, SQL and analytics.
     </p>
   </div>
 </section>
@@ -161,52 +221,63 @@ h2{
     <div class="marquee-track">
       <span>Python</span><span>SQL</span><span>Power BI</span><span>DAX</span>
       <span>Excel</span><span>ETL</span><span>ML</span><span>Statistics</span>
-
       <span>Python</span><span>SQL</span><span>Power BI</span><span>DAX</span>
       <span>Excel</span><span>ETL</span><span>ML</span><span>Statistics</span>
     </div>
   </div>
 
   <div class="skills-cards">
-    <div class="skill-card reveal">
-      <h3>Technical Expertise</h3>
-      <div class="tags">
-        <span>Python</span><span>SQL</span><span>Power BI</span>
-        <span>DAX</span><span>DataStage</span>
-      </div>
+    <div class="skill-card reveal">Technical Expertise</div>
+    <div class="skill-card reveal">Analytics & Modeling</div>
+    <div class="skill-card reveal">Business Intelligence</div>
+    <div class="skill-card reveal">Leadership & Stakeholders</div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+  <h2>Experience.</h2>
+  <div class="timeline">
+
+    <div class="exp reveal">
+      <span class="date">03/2023 – Present</span>
+      <h3>Deputy Manager – Data Analytics</h3>
+      <small>Reliance Industries Limited</small>
+      <p>Delivered executive dashboards, analytics insights, and reporting automation.</p>
     </div>
 
-    <div class="skill-card reveal">
-      <h3>Analytics & Modeling</h3>
-      <div class="tags">
-        <span>EDA</span><span>Predictive Modeling</span>
-        <span>Machine Learning</span>
-      </div>
+    <div class="exp reveal">
+      <span class="date">01/2020 – 04/2021</span>
+      <h3>Cluster In-Charge</h3>
+      <small>Bharti Infratel / Indus Towers</small>
     </div>
 
-    <div class="skill-card reveal">
-      <h3>Business Intelligence</h3>
-      <div class="tags">
-        <span>Dashboards</span><span>KPI Reporting</span>
-        <span>Data Visualization</span>
-      </div>
+    <div class="exp reveal">
+      <span class="date">01/2019 – 01/2020</span>
+      <h3>Cluster Engineer</h3>
+      <small>ATC Telecom</small>
     </div>
 
-    <div class="skill-card reveal">
-      <h3>Professional Skills</h3>
-      <div class="tags">
-        <span>Stakeholder Management</span>
-        <span>Leadership</span>
-        <span>Communication</span>
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects" class="section">
   <h2>Projects.</h2>
-  <p>Power BI Dashboards • Customer Segmentation • Data Automation</p>
+  <div class="projects">
+    <div class="project green">
+      <h3>Sales Dashboard</h3>
+      <p>Power BI dashboards for revenue & KPI tracking.</p>
+    </div>
+    <div class="project orange">
+      <h3>Customer Segmentation</h3>
+      <p>Python ML models for user segmentation.</p>
+    </div>
+    <div class="project red">
+      <h3>Data Automation</h3>
+      <p>ETL pipelines reducing manual effort.</p>
+    </div>
+  </div>
 </section>
 
 <!-- CONTACT -->
@@ -214,17 +285,23 @@ h2{
   <h2>Contact.</h2>
   <p>📧 therjworld@gmail.com</p>
   <p>📞 +91-7987111121</p>
-  <p>GitHub: https://github.com/therjworld</p>
+  <p>GitHub: github.com/therjworld</p>
 </section>
 
 <script>
-const reveals=document.querySelectorAll(".reveal");
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){e.target.classList.add("active")}
-  });
+/* Reveal */
+const r=document.querySelectorAll(".reveal");
+const o=new IntersectionObserver(e=>{
+  e.forEach(i=>{if(i.isIntersecting)i.target.classList.add("active")})
 },{threshold:.2});
-reveals.forEach(r=>obs.observe(r));
+r.forEach(el=>o.observe(el));
+
+/* Dark mode */
+const t=document.getElementById("themeToggle");
+t.onclick=()=>{
+  document.body.classList.toggle("dark");
+  t.textContent=document.body.classList.contains("dark")?"Light":"Dark";
+};
 </script>
 
 </body>
