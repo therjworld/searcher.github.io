@@ -405,3 +405,17 @@ body.dark .glow-btn:hover{
   opacity: 1;
   transform: translateY(0);
 }
+/* === FORCE HERO IMAGE VISIBILITY === */
+.hero-image{
+  display:block !important;
+  position:relative;
+  z-index:2;
+}
+
+.hero-image img{
+  display:block !important;
+  width:48px;
+  height:auto;
+  opacity:1 !important;
+  visibility:visible !important;
+}
