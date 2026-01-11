@@ -5,89 +5,132 @@
   <title>Searcher | Data Analyst</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+  <!-- PREMIUM GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <!-- SEO -->
-  <meta name="description" content="Searcher – Experienced Data Analyst with 9+ years of experience in Power BI, Python, SQL, and data visualization.">
-  <meta name="keywords" content="Data Analyst, Power BI, Python, SQL, Business Intelligence">
+  <meta name="description" content="Searcher – Senior Data Analyst specializing in Power BI, Python, SQL, and business analytics.">
   <meta name="author" content="Searcher">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav>
-  <h3>Searcher</h3>
-
+<!-- NAV -->
+<nav class="nav">
+  <div class="logo">SR.</div>
   <ul id="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-
-  <div class="nav-actions">
-    <button id="theme-toggle">🌙</button>
-    <div class="menu" id="menu-btn">☰</div>
-  </div>
+  <div class="menu" id="menu-btn">☰</div>
 </nav>
 
 <!-- HERO -->
-<section class="hero reveal">
-  <h1>Hi, I'm <span>Searcher</span></h1>
-  <p>Experienced <strong>Data Analyst</strong> | Power BI • Python • SQL</p>
+<section class="hero">
+  <div class="hero-inner">
 
-  <div class="hero-btns">
-    <a href="#projects" class="primary">View Work</a>
-    <a href="Searcher_Data_Analyst_Resume.pdf" class="secondary" download>
-      Download Resume
-    </a>
-  </div>
-</section>
+    <div class="bars">
+      <span></span><span></span><span></span>
+    </div>
 
-<!-- ABOUT -->
-<section id="about" class="section reveal">
-  <h2>About Me</h2>
-  <p>
-    Experienced Data Analyst with <strong>9+ years of overall experience</strong>
-    and <strong>7+ years in analytics</strong>, driving growth, retention,
-    and business efficiency through data-driven insights.
-    Recognized as a <strong>Top Performer at Reliance Jio</strong>.
-  </p>
-</section>
+    <div class="hero-content">
+      <p class="eyebrow">Searcher • Data Analyst</p>
 
-<!-- METRICS -->
-<section class="section reveal">
-  <h2>Impact Metrics</h2>
-  <div class="metrics">
-    <div class="metric"><h3>↑ 18%</h3><p>User Retention</p></div>
-    <div class="metric"><h3>↓ 25%</h3><p>Manual Reporting</p></div>
-    <div class="metric"><h3>↑ 20%</h3><p>Decision Speed</p></div>
-    <div class="metric"><h3>2×</h3><p>Top Performer</p></div>
-  </div>
-</section>
+      <h1>
+        BUILDING<br>
+        <span>DATA-DRIVEN INSIGHTS</span><br>
+        FOR REAL-WORLD<br>
+        IMPACT.
+      </h1>
 
-<!-- SKILLS -->
-<section id="skills" class="section gray reveal">
-  <h2>Skills</h2>
-  <div class="skills">
-    <span>Power BI</span>
-    <span>Python</span>
-    <span>SQL</span>
-    <span>Excel (Advanced)</span>
-    <span>DAX</span>
-    <span>Power Query</span>
-    <span>Statistics</span>
-    <span>Machine Learning</span>
+      <p class="hero-desc">
+        Senior Data Analyst with 9+ years of experience transforming complex datasets
+        into actionable intelligence. Specialized in Power BI, Python, SQL, and
+        predictive analytics for enterprise decision-making.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn primary">Let’s Get Started →</a>
+        <a href="Searcher_Data_Analyst_Resume.pdf" class="btn outline" download>
+          Download Resume
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience" class="section reveal">
+<section id="experience" class="section">
   <h2>Experience</h2>
 
   <div class="timeline">
     <div class="timeline-item">
       <span>2023 – Present</span>
       <h3>Deputy Manager – Data Analytics</h3>
-      <p><strong>Reliance Industries Limi
+      <p>Reliance Industries Limited</p>
+    </div>
+
+    <div class="timeline-item">
+      <span>2020 – 2021</span>
+      <h3>Cluster In-Charge</h3>
+      <p>Bharti Infratel / Indus Towers</p>
+    </div>
+
+    <div class="timeline-item">
+      <span>2019 – 2020</span>
+      <h3>Cluster Engineer</h3>
+      <p>ATC Telecom</p>
+    </div>
+
+    <div class="timeline-item">
+      <span>2014 – 2019</span>
+      <h3>Infrastructure Engineer / Project Coordinator</h3>
+      <p>HG Techno Services / Chirag Enterprises</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section dark">
+  <h2>Selected Work</h2>
+
+  <div class="projects-grid">
+    <div class="card">
+      <img src="images/powerbi_sales.jpg">
+      <h3>Sales Performance Dashboard</h3>
+      <p>Executive Power BI dashboards delivering KPI clarity and growth insights.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/powerbi_customer.jpg">
+      <h3>Customer Segmentation</h3>
+      <p>Python-based clustering models identifying high-value user segments.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/powerbi_operations.jpg">
+      <h3>Operational Analytics</h3>
+      <p>Automated reporting systems reducing manual effort by 25%.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact">
+  <h2>Contact</h2>
+  <p>📞 +91-7987111121</p>
+  <p>📧 therjworld@gmail.com</p>
+  <p>GitHub: <a href="https://github.com/therjworld">therjworld</a></p>
+</section>
+
+<footer>
+  © 2026 Searcher — Data Analyst
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
