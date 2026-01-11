@@ -390,18 +390,6 @@ body.dark .glow-btn:hover{
     0 0 40px rgba(106,163,139,0.5);
 }
 
-/* ================= MOBILE ================= */
-@media(max-width:768px){
-  .hero-wrap{
-    grid-template-columns:1fr;
-  }
-  .hero-image{
-    display:none;
-  }
-  .hero-title{
-    font-size:42px;
-  }
-}
 /* ================= BARS ANIMATION ================= */
 
 /* Initial state */
