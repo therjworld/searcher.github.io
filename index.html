@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 <meta charset="UTF-8">
 <title>Searcher | Data Analyst</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -181,26 +182,46 @@ body.dark .bars span:nth-child(4){background:#e07a7a}
 }
 
 /* ================= SKILLS ================= */
-.skills-marquee{
-  overflow:hidden;
-  margin:40px 0 60px;
-}
-.marquee{
-  display:flex;
-  gap:14px;
-  width:max-content;
-  animation:marquee 28s linear infinite;
-}
-.skills-marquee:hover .marquee{animation-play-state:paused}
-.marquee span{
-  padding:10px 14px;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:6px;
-}
-@keyframes marquee{
-  to{transform:translateX(-50%)}
-}
+<section id="skills" class="section">
+  <h2>Skills.</h2>
+
+  <div class="skills-cards">
+
+    <div class="skill-card reveal">
+      <div class="skill-head">
+        <i class="devicon-python-plain colored"></i>
+        <h3>Python</h3>
+      </div>
+      <p>Pandas, NumPy, data analysis, automation</p>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-head">
+        <i class="devicon-mysql-plain colored"></i>
+        <h3>SQL</h3>
+      </div>
+      <p>MySQL, complex queries, performance tuning</p>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-head">
+        <i class="devicon-powerbi-plain colored"></i>
+        <h3>Power BI</h3>
+      </div>
+      <p>Dashboards, DAX, reporting & insights</p>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-head">
+        <i class="devicon-excel-plain colored"></i>
+        <h3>Advanced Excel</h3>
+      </div>
+      <p>Power Query, pivot tables, automation</p>
+    </div>
+
+  </div>
+</section>
+
 
 /* ================= EXPERIENCE ================= */
 .timeline{position:relative}
