@@ -63,22 +63,48 @@ nav a{text-decoration:none;color:var(--muted)}
 }
 
 /* ================= HERO ================= */
-.hero{
-  min-height:80vh;
-  display:flex;
-  align-items:center;
-}
-.hero h1{
-  font-family:"Playfair Display",serif;
-  font-size:64px;
-  line-height:1.05;
-}
-.hero span{color:var(--accent)}
-.hero p{
-  margin-top:20px;
-  max-width:620px;
-  color:var(--muted);
-}
+<section class="section hero">
+  <div class="hero-wrap">
+
+    <!-- LEFT IMAGE -->
+    <div class="hero-image">
+      <img src="images/hero-bars.png" alt="Design bars">
+    </div>
+
+    <!-- TEXT -->
+    <div class="hero-content">
+      <p class="eyebrow glow-text">
+        SEARCHER • DATA ANALYST
+      </p>
+
+      <h1 class="hero-title">
+        BUILDING<br>
+        <span class="accent glow-text">DATA-DRIVEN INSIGHTS</span><br>
+        FOR REAL WORLD<br>
+        IMPACT.
+      </h1>
+
+      <p class="hero-desc">
+        Experienced Data Analyst with 9+ years of experience delivering
+        business insights using Power BI, Python, SQL and advanced analytics.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn primary glow-btn">
+          LET’S GET STARTED →
+        </a>
+
+        <a href="Searcher_Data_Analyst_Resume.pdf"
+           class="btn outline glow-btn"
+           download>
+          ⬇ DOWNLOAD RESUME
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 /* ================= SKILLS ================= */
 .skills-marquee{overflow:hidden;margin:40px 0 60px}
