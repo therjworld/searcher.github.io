@@ -1,68 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   background: #f4f6f8;
   color: #333;
 }
 
+/* HERO */
 .hero {
-  background: linear-gradient(to right, #1d2671, #c33764);
+  background: linear-gradient(135deg, #141e30, #243b55);
   color: white;
   text-align: center;
-  padding: 80px 20px;
+  padding: 90px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  margin-top: 25px;
 }
 
 .btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: white;
-  color: #c33764;
   text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
+  padding: 12px 22px;
+  margin: 8px;
+  background: white;
+  color: #243b55;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
 }
 
+.btn.outline {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+/* SECTIONS */
 section {
-  padding: 50px 20px;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
+  padding: 60px 20px;
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
-.skills ul {
-  list-style: none;
-  padding: 0;
+/* ABOUT */
+.about p {
   text-align: center;
+  font-size: 17px;
+  line-height: 1.6;
 }
 
-.skills li {
-  display: inline-block;
-  margin: 10px;
-  background: #ddd;
-  padding: 10px 15px;
-  border-radius: 5px;
+/* SKILLS */
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 }
 
-.projects .project {
+.skill-grid span {
+  background: #e1e5ea;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* PROJECTS */
+.project {
   background: white;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
+.project h3 {
+  margin-top: 0;
+}
+
+.project a {
+  text-decoration: none;
+  color: #243b55;
+  font-weight: 600;
+}
+
+/* CONTACT */
 .contact {
   text-align: center;
 }
 
+.contact a {
+  color: #243b55;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* FOOTER */
 footer {
-  text-align: center;
-  padding: 20px;
-  background: #222;
+  background: #141e30;
   color: white;
+  text-align: center;
+  padding: 18px;
 }
