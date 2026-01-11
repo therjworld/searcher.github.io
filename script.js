@@ -1,18 +1,15 @@
-// HERO MASK REVEAL ON LOAD + SCROLL RE-ENTRY
-const hero = document.querySelector(".hero");
-const heroText = document.querySelector(".mask-text");
-
-let hasPlayed = false;
+// Scroll reveal (stable, no shaking)
+const reveals = document.querySelectorAll(".reveal");
 
 const observer = new IntersectionObserver(
-  ([entry]) => {
-    if (entry.isIntersecting) {
-      heroText.classList.remove("play");
-      void heroText.offsetWidth; // reset animation
-      heroText.classList.add("play");
-    }
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
   },
-  { threshold: 0.6 }
+  { threshold: 0.25 }
 );
 
-observer.observe(hero);
+reveals.forEach(el => observer.observe(el));
