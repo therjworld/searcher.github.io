@@ -50,100 +50,160 @@ h2{
 nav{
   display:flex;
   justify-content:space-between;
+  align-items:center;
   padding:24px 60px;
 }
-nav ul{display:flex;gap:30px;list-style:none}
-nav a{text-decoration:none;color:var(--muted)}
+nav ul{
+  display:flex;
+  gap:30px;
+  list-style:none;
+}
+nav a{
+  text-decoration:none;
+  color:var(--muted);
+  position:relative;
+}
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:1px;
+  background:var(--accent);
+  transition:.3s;
+}
+nav a:hover::after{width:100%}
 .toggle{
   cursor:pointer;
-  font-size:14px;
+  font-size:13px;
   border:1px solid var(--border);
-  padding:6px 12px;
+  padding:6px 14px;
   border-radius:20px;
 }
 
 /* ================= HERO ================= */
-<section class="section hero">
-  <div class="hero-wrap">
+.hero{
+  min-height:80vh;
+  display:flex;
+  align-items:center;
+}
+.hero-wrap{
+  display:grid;
+  grid-template-columns:60px 1fr;
+  gap:40px;
+  align-items:flex-start;
+}
 
-    <!-- LEFT IMAGE -->
-    <div class="hero-image bars-css">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+/* --- CSS BARS --- */
+.bars{
+  display:flex;
+  gap:6px;
+}
+.bars span{
+  width:6px;
+  height:140px;
+  border-radius:3px;
+  opacity:0;
+  transform:translateY(20px);
+  animation:barReveal 1s ease forwards;
+}
+.bars span:nth-child(1){background:#6aa38b;animation-delay:.1s}
+.bars span:nth-child(2){background:#c46b2d;animation-delay:.2s}
+.bars span:nth-child(3){background:#222;animation-delay:.3s}
+.bars span:nth-child(4){background:#a33a4f;animation-delay:.4s}
 
+@keyframes barReveal{
+  to{opacity:1;transform:translateY(0)}
+}
 
-    <!-- TEXT -->
-    <div class="hero-content">
-      <p class="eyebrow glow-text">
-        SEARCHER • DATA ANALYST
-      </p>
+/* Dark mode bars */
+body.dark .bars span:nth-child(1){background:#7ddbb5}
+body.dark .bars span:nth-child(2){background:#f0a35e}
+body.dark .bars span:nth-child(3){background:#eaeaf0}
+body.dark .bars span:nth-child(4){background:#e07a7a}
 
-      <h1 class="hero-title">
-        BUILDING<br>
-        <span class="accent glow-text">DATA-DRIVEN INSIGHTS</span><br>
-        FOR REAL WORLD<br>
-        IMPACT.
-      </h1>
+/* Glow on hover */
+.hero:hover .bars span{
+  box-shadow:
+    0 0 10px rgba(106,163,139,.5),
+    0 0 24px rgba(106,163,139,.3);
+}
 
-      <p class="hero-desc">
-        Experienced Data Analyst with 9+ years of experience delivering
-        business insights using Power BI, Python, SQL and advanced analytics.
-      </p>
+/* --- HERO TEXT --- */
+.hero h1{
+  font-family:"Playfair Display",serif;
+  font-size:64px;
+  line-height:1.05;
+}
+.hero .accent{color:var(--accent)}
+.eyebrow{
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:14px;
+  color:var(--muted);
+}
+.hero p{
+  max-width:620px;
+  margin:20px 0 36px;
+  color:var(--muted);
+  line-height:1.6;
+}
 
-      <div class="hero-buttons">
-        <a href="#projects" class="btn primary glow-btn">
-          LET’S GET STARTED →
-        </a>
-
-        <a href="Searcher_Data_Analyst_Resume.pdf"
-           class="btn outline glow-btn"
-           download>
-          ⬇ DOWNLOAD RESUME
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
+/* --- BUTTONS --- */
+.hero-buttons{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.btn{
+  padding:14px 26px;
+  font-size:13px;
+  letter-spacing:1px;
+  border-radius:6px;
+  text-decoration:none;
+  transition:.3s;
+}
+.primary{
+  background:var(--accent);
+  color:#fff;
+}
+.outline{
+  border:1px solid var(--border);
+  color:var(--text);
+}
+.btn:hover{
+  box-shadow:
+    0 0 12px rgba(106,163,139,.5),
+    0 0 30px rgba(106,163,139,.35);
+  transform:translateY(-2px);
+}
 
 /* ================= SKILLS ================= */
-.skills-marquee{overflow:hidden;margin:40px 0 60px}
-.marquee-track{
-  display:flex;gap:14px;width:max-content;
+.skills-marquee{
+  overflow:hidden;
+  margin:40px 0 60px;
+}
+.marquee{
+  display:flex;
+  gap:14px;
+  width:max-content;
   animation:marquee 28s linear infinite;
 }
-.skills-marquee:hover .marquee-track{animation-play-state:paused}
-.marquee-track span{
+.skills-marquee:hover .marquee{animation-play-state:paused}
+.marquee span{
   padding:10px 14px;
   background:var(--card);
   border:1px solid var(--border);
   border-radius:6px;
-  font-size:14px;
 }
 @keyframes marquee{
-  from{transform:translateX(0)}
   to{transform:translateX(-50%)}
 }
-.skills-cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:40px;
-}
-.skill-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  padding:35px;
-  border-radius:6px;
-}
 
-/* ================= EXPERIENCE (LIKE SCREENSHOT) ================= */
-.timeline{
-  position:relative;
-}
+/* ================= EXPERIENCE ================= */
+.timeline{position:relative}
 .timeline::before{
   content:"";
   position:absolute;
@@ -171,14 +231,13 @@ nav a{text-decoration:none;color:var(--muted)}
   background:var(--accent);
   border-radius:50%;
 }
-.exp h3{margin-bottom:6px}
-.exp small{color:var(--muted)}
 .date{
   float:right;
   font-size:12px;
-  padding:4px 8px;
   border:1px solid var(--border);
+  padding:4px 8px;
   border-radius:4px;
+  color:var(--muted);
 }
 
 /* ================= PROJECTS ================= */
@@ -196,11 +255,6 @@ nav a{text-decoration:none;color:var(--muted)}
 .green{border-color:#6aa38b}
 .orange{border-color:#e38b3b}
 .red{border-color:#c95c5c}
-.project h3{margin-bottom:10px}
-.project p{color:var(--muted)}
-
-/* ================= CONTACT ================= */
-.contact p{margin-bottom:10px}
 
 /* ================= REVEAL ================= */
 .reveal{
@@ -211,6 +265,20 @@ nav a{text-decoration:none;color:var(--muted)}
 .reveal.active{
   opacity:1;
   transform:translateY(0);
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  nav{padding:20px}
+  .hero-wrap{
+    grid-template-columns:40px 1fr;
+    gap:20px;
+  }
+  .bars span{
+    height:100px;
+    width:5px;
+  }
+  .hero h1{font-size:42px}
 }
 </style>
 </head>
@@ -230,16 +298,32 @@ nav a{text-decoration:none;color:var(--muted)}
 
 <!-- HERO -->
 <section class="section hero">
-  <div>
-    <h1>
-      BUILDING<br>
-      <span>DATA-DRIVEN INSIGHTS</span><br>
-      FOR REAL-WORLD IMPACT.
-    </h1>
-    <p>
-      Searcher — Experienced Data Analyst with 9+ years of experience
-      delivering business insights using Power BI, Python, SQL and analytics.
-    </p>
+  <div class="hero-wrap">
+
+    <div class="bars">
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <div>
+      <p class="eyebrow">SEARCHER • DATA ANALYST</p>
+      <h1>
+        BUILDING<br>
+        <span class="accent">DATA-DRIVEN INSIGHTS</span><br>
+        FOR REAL-WORLD IMPACT.
+      </h1>
+      <p>
+        Experienced Data Analyst with 9+ years of experience delivering
+        business insights using Power BI, Python, SQL, and analytics.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn primary">LET’S GET STARTED →</a>
+        <a href="Searcher_Data_Analyst_Resume.pdf" class="btn outline" download>
+          DOWNLOAD RESUME
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -248,46 +332,36 @@ nav a{text-decoration:none;color:var(--muted)}
   <h2>Skills.</h2>
 
   <div class="skills-marquee">
-    <div class="marquee-track">
+    <div class="marquee">
       <span>Python</span><span>SQL</span><span>Power BI</span><span>DAX</span>
       <span>Excel</span><span>ETL</span><span>ML</span><span>Statistics</span>
       <span>Python</span><span>SQL</span><span>Power BI</span><span>DAX</span>
-      <span>Excel</span><span>ETL</span><span>ML</span><span>Statistics</span>
     </div>
-  </div>
-
-  <div class="skills-cards">
-    <div class="skill-card reveal">Technical Expertise</div>
-    <div class="skill-card reveal">Analytics & Modeling</div>
-    <div class="skill-card reveal">Business Intelligence</div>
-    <div class="skill-card reveal">Leadership & Stakeholders</div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience" class="section">
   <h2>Experience.</h2>
-  <div class="timeline">
 
+  <div class="timeline">
     <div class="exp reveal">
-      <span class="date">03/2023 – Present</span>
+      <span class="date">2023 – Present</span>
       <h3>Deputy Manager – Data Analytics</h3>
       <small>Reliance Industries Limited</small>
-      <p>Delivered executive dashboards, analytics insights, and reporting automation.</p>
     </div>
 
     <div class="exp reveal">
-      <span class="date">01/2020 – 04/2021</span>
+      <span class="date">2020 – 2021</span>
       <h3>Cluster In-Charge</h3>
       <small>Bharti Infratel / Indus Towers</small>
     </div>
 
     <div class="exp reveal">
-      <span class="date">01/2019 – 01/2020</span>
+      <span class="date">2019 – 2020</span>
       <h3>Cluster Engineer</h3>
       <small>ATC Telecom</small>
     </div>
-
   </div>
 </section>
 
@@ -295,41 +369,36 @@ nav a{text-decoration:none;color:var(--muted)}
 <section id="projects" class="section">
   <h2>Projects.</h2>
   <div class="projects">
-    <div class="project green">
-      <h3>Sales Dashboard</h3>
-      <p>Power BI dashboards for revenue & KPI tracking.</p>
-    </div>
-    <div class="project orange">
-      <h3>Customer Segmentation</h3>
-      <p>Python ML models for user segmentation.</p>
-    </div>
-    <div class="project red">
-      <h3>Data Automation</h3>
-      <p>ETL pipelines reducing manual effort.</p>
-    </div>
+    <div class="project green">Sales Dashboard (Power BI)</div>
+    <div class="project orange">Customer Segmentation (Python)</div>
+    <div class="project red">Data Automation (ETL)</div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section contact">
+<section id="contact" class="section">
   <h2>Contact.</h2>
   <p>📧 therjworld@gmail.com</p>
   <p>📞 +91-7987111121</p>
-  <p>GitHub: github.com/therjworld</p>
 </section>
 
 <script>
 /* Reveal */
-const r=document.querySelectorAll(".reveal");
-const o=new IntersectionObserver(e=>{
-  e.forEach(i=>{if(i.isIntersecting)i.target.classList.add("active")})
+const els=document.querySelectorAll(".reveal");
+const io=new IntersectionObserver(e=>{
+  e.forEach(x=>x.isIntersecting&&x.target.classList.add("active"));
 },{threshold:.2});
-r.forEach(el=>o.observe(el));
+els.forEach(el=>io.observe(el));
 
 /* Dark mode */
 const t=document.getElementById("themeToggle");
+if(localStorage.theme==="dark"){
+  document.body.classList.add("dark");
+  t.textContent="Light";
+}
 t.onclick=()=>{
   document.body.classList.toggle("dark");
+  localStorage.theme=document.body.classList.contains("dark")?"dark":"light";
   t.textContent=document.body.classList.contains("dark")?"Light":"Dark";
 };
 </script>
