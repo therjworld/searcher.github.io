@@ -1,3 +1,20 @@
+/* ================= BARS GLOW ON HOVER ================= */
+
+.hero:hover .hero-image img,
+.hero .glow-text:hover ~ .hero-image img,
+.hero .glow-btn:hover ~ .hero-image img {
+  filter: drop-shadow(0 0 10px rgba(106,163,139,0.6))
+          drop-shadow(0 0 24px rgba(106,163,139,0.4));
+}
+/* ================= DARK MODE BAR COLOR ================= */
+
+body.dark .hero-image img {
+  filter:
+    hue-rotate(40deg)
+    saturate(1.4)
+    brightness(1.1);
+}
+
 /* ================= ROOT VARIABLES ================= */
 :root{
   --bg:#f7f4ed;
