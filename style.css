@@ -138,29 +138,33 @@ h2{
   margin:40px 0 60px;
 }
 
-.marquee-track{
+.marquee{
   display:flex;
   gap:14px;
   width:max-content;
   animation:marquee 28s linear infinite;
 }
 
-.skills-marquee:hover .marquee-track{
-  animation-play-state:paused;
-}
-
-.marquee-track span{
+.marquee span{
   padding:10px 14px;
   background:var(--card);
   border:1px solid var(--border);
   border-radius:6px;
-  font-size:14px;
   white-space:nowrap;
 }
 
 @keyframes marquee{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
+  to{ transform:translateX(-50%) }
+}
+
+.skill-head{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.skill-head i{
+  font-size:34px;
 }
 
 /* ================= SKILLS CARDS ================= */
